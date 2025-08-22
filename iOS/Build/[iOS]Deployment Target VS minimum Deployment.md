@@ -2,7 +2,7 @@
 
 ⚠️ Xcode가 변했는지 최근 Xcdoe에는 Project Info에서 Deployment Target 과 minimum Deployment 의 구분이 사라진 듯 하다.
 
-![스크린샷 2025-08-22 오후 1.42.23.png](%5BiOS%5DDeployment%20Target%20VS%20minimum%20Deployment%202578ef220c3b803e9987e2e901094595/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-08-22_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1.42.23.png)
+<img width="1374" height="786" alt="스크린샷_2025-08-22_오후_1 42 23" src="https://github.com/user-attachments/assets/0546d832-d320-4633-bfbb-a451a0fc42ce" />
 
 ### ~~Deployment Target~~
 
@@ -23,10 +23,10 @@
     - 물론 Target 별로 설정을 자유롭게 수정할 수 있음
     - 즉, Target에서 Build Setting을 수정하거나 할당하지 않으면 Project Build Setting을 상속받음
         - 이를 이해하기 제일 좋은 방법은 Target의 Build Settings를 열고 필터로 설정
-            
-            ![스크린샷 2025-08-22 오후 11.25.49.png](%5BiOS%5DDeployment%20Target%20VS%20minimum%20Deployment%202578ef220c3b803e9987e2e901094595/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-08-22_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.25.49.png)
+            <img width="993" height="483" alt="스크린샷_2025-08-22_오후_11 25 49" src="https://github.com/user-attachments/assets/bdf5b246-e859-4f19-8a06-7fd76841c8ba" />
             
 
+### References
 [Configuring the build settings of a target | Apple Developer Documentation](https://developer.apple.com/documentation/Xcode/configuring-the-build-settings-of-a-target)
 
 [Xcode target Deployment Target vs. project Deployment Target](https://stackoverflow.com/questions/7105127/xcode-target-deployment-target-vs-project-deployment-target)
