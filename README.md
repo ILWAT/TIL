@@ -14,3 +14,9 @@ Today I Learned
 
 ## Git
 [특정 라인 커밋하기](Git/특정%20라인%20커밋하기.md)
+
+
+## Other
+
+### Kotlin
+[let(Scope Function)](Kotlin/[Kotlin]%20let(Scope%20Function).md)
