@@ -23,8 +23,10 @@ Today I Learned
 
 ### Java
 - [Stack 구현체 및 메서드](CodingTest/Java/[Java]%20Stack%20구현체%20및%20메서드.md)
+- [chained assignment](CodingTest/Java/[JAVA]chained%20assignment%20(연쇄할당).md)
 
 ## Other
 
 ### Kotlin
 - [let(Scope Function)](Kotlin/[Kotlin]%20let(Scope%20Function).md)
+
