@@ -7,6 +7,7 @@ Today I Learned
 
 - [[Swift] 통합 로깅 시스템 (Logger, os_log)(작성중)](iOS/[Swift]%20통합%20로깅%20시스템%20(Logger,%20os_log).md)  
 - [[WWDC] Protect mutable state with Swift actors (WWDC21)(작성중)](iOS/[WWDC]%20Protect%20mutable%20state%20with%20Swift%20actors%20(WWDC21).md)
+- [[UIKit] Migrating to the UIKit scene-based life cycle](iOS/[UIKit]%20Migrating%20to%20the%20UIKit%20scene-based%20life%20cycle.md)
 
 ### Xcode
 - [Deployment Target VS minimum Deployment](iOS/Build/[iOS]Deployment%20Target%20VS%20minimum%20Deployment.md)
