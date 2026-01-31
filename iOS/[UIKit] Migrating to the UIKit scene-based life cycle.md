@@ -58,7 +58,7 @@ Scene-based lifey cycle(Scene Delegate 도입)을 채택 하지 않은 프로젝
     
     ### (필요시) AppDelegate에 application(_:configurationForConnecting:options:) 구현하여 configuration 구성하기
     
-    Info.plist 파일 UIApplicationSceneManifest를 제대로 설정해주었다면 AppDelegate에 application(_:configurationForConnecting:options:)를 구현할 필요가 없지만 아래 2가지 경우에는 구현 하도록 하자.
+    Info.plist 파일 `UIApplicationSceneManifest`를 제대로 설정해주었다면 `AppDelegate`에 `application(_:configurationForConnecting:options:)`를 구현할 필요가 없지만 아래 2가지 경우에는 구현 하도록 하자.
     
     1. **info.plist 파일 UIApplicationSceneManifest를 추가하지 않는 경우**
         
@@ -84,14 +84,14 @@ Scene-based lifey cycle(Scene Delegate 도입)을 채택 하지 않은 프로젝
         
     2. **동적 UISceneConfigurations 설정이 필요한 경우**
         
-        사용자 활동 또는 세션별 데이터에 따라 다른 장면을 로드할 필요가 있는 경우, UISceneConfiguration을 생성해주고 싶다면 먼저 Info.plist에 추가적으로 UIWindowSceneSessionRoleApplication 값을 추가해주어야 한다.
+        사용자 활동 또는 세션별 데이터에 따라 다른 장면을 로드할 필요가 있는 경우, `UISceneConfiguration`을 생성해주고 싶다면 먼저 Info.plist에 추가적으로 `UIWindowSceneSessionRoleApplication` 값을 추가해주어야 한다.
         
         <aside>
         💡
         
-        UIApplicationSupportsMultipleScenes을 true로 설정해주어야 한다
+        `UIApplicationSupportsMultipleScenes`을 true로 설정해주어야 한다
         
-        false로 설정 되어있으면 정적으로 동작하게 되어 application(_:configurationForConnecting:options:)가 제대로 호출되지 않는다.
+        false로 설정 되어있으면 정적으로 동작하게 되어 `application(_:configurationForConnecting:options:)`가 제대로 호출되지 않는다.
         
         </aside>
         
@@ -127,7 +127,7 @@ Scene-based lifey cycle(Scene Delegate 도입)을 채택 하지 않은 프로젝
         	</dict>
         ```
         
-        UIWindowSceneSessionRoleApplication 값을 추가후 다시 AppDelegate application(_:configurationForConnecting:options:)로 돌아가서 상황에 맞는 UISceneConfiguration를 생성후 리턴해주자.
+        `UIWindowSceneSessionRoleApplication` 값을 추가후 다시 `AppDelegate` `application(_:configurationForConnecting:options:)`로 돌아가서 상황에 맞는 `UISceneConfiguration`를 생성후 리턴해주자.
         
         ```swift
         class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -285,11 +285,49 @@ SceneDelegate 도입 후
 
 Scene Delegate 도입 전에는 AppDelegate에서 실행되던 메서드들이 Scene base life cycle을 적용하고 나서부터는 제대로 실행되지 않는 것을 확인할 수 있다.
 
-이렇게 하면 Scene base life cycle 적용을 완료한 것이다.
+이렇게 하면 Scene base life cycle 적용을 완료한 것이다.  
 
----
+---  
+
+
 
 ## ⚠️ AppDelegate의 window 변수 migration
+
+기존에 `AppDelegate`에서 `window` 변수를 통해 앱의 메인 윈도우에 접근하거나, `UIApplication.shared.keyWindow`를 사용하여 현재 활성화된 윈도우를 가져오던 방식은 이제 사용할 수 없거나 권장되지 않는다. 특히 `keyWindow`는 iOS 13부터 Deprecated 되었는데, 이는 앞서 살펴본 것처럼 하나의 앱이 여러 개의 Scene을 가질 수 있게 되었기 때문이다.
+
+따라서 기존의 `UIApplication.shared.keyWindow`를 사용하던 코드는 현재 활성화된 `UIWindowScene`을 찾아서 해당 씬의 윈도우를 가져오는 방식으로 마이그레이션 해야 한다.
+
+### `UIApplication.shared.keyWindow` 대체 방법
+기존에 단 한 줄로 가져오던 방식에서, 현재 연결된 씬들 중 활성화된(foregroundActive) 씬을 찾아 그 안의 keyWindow를 필터링하는 복잡한 과정이 필요해졌다.
+
+```Swift
+// AS-IS (Deprecated)
+let window = UIApplication.shared.keyWindow
+
+// TO-BE (Migration)
+let window = UIApplication.shared.connectedScenes
+    .filter { $0.activationState == .foregroundActive } // 활성화된 씬 필터링
+    .map { $0 as? UIWindowScene }
+    .compactMap { $0 }
+    .first?.windows
+    .filter { $0.isKeyWindow }.first // 그 중 Key Window 추출
+```
+### 공통 Extension으로 만들어 사용하기
+매번 위 코드를 작성하는 것은 비효율적이므로, 아래와 같이 UIApplication을 확장(Extension)하여 사용하는 것이 좋다.
+
+```Swift
+extension UIApplication {
+    var customKeyWindow: UIWindow? {
+        return connectedScenes
+            .filter { $0.activationState == .foregroundActive }
+            .map { $0 as? UIWindowScene }
+            .compactMap { $0 }
+            .first?.windows
+            .filter { $0.isKeyWindow }.first
+    }
+}
+```
+이렇게 마이그레이션을 진행하면 Scene-based Life Cycle 환경에서도 안전하게 현재 사용자가 보고 있는 윈도우 인스턴스에 접근할 수 있다. `AppDelegate`의 `window` 변수에만 의존하던 기존 로직들을 모두 `SceneDelegate`나 위와 같은 계산된 프로퍼티 방식으로 변경하도록 하자.
 
 ---
 
