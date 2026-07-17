@@ -21,6 +21,7 @@ Today I Learned
 
 
 ## Coding Test
+- [[Algorithm] 소수(Prime Number) 효율 판별](CodingTest/[Algorithm]%20소수(Prime%20Number)%20효율%20판별.md)
 
 ### Java
 - [Stack 구현체 및 메서드](CodingTest/Java/[Java]%20Stack%20구현체%20및%20메서드.md)
