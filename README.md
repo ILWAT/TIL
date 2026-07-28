@@ -16,8 +16,10 @@ Today I Learned
 - [MQTT](Network/MQTT.md)
 
 
-## Image
-- [[Image] WebP 포맷 정리](Image/[Image]%20WebP%20포맷%20정리.md)
+## Computer Science
+
+### Image
+- [[Image] WebP 포맷 정리](ComputerScience/Image/[Image]%20WebP%20포맷%20정리.md)
 
 
 ## Git
