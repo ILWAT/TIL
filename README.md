@@ -12,11 +12,13 @@ Today I Learned
 ### Xcode
 - [Deployment Target VS minimum Deployment](iOS/Build/[iOS]Deployment%20Target%20VS%20minimum%20Deployment.md)
 
-## Network
-- [MQTT](Network/MQTT.md)
-
+## AI
+- [Harness Engineering 정리](AI/[AI]%20Harness%20Engineering%20정리.md)
 
 ## Computer Science
+
+### Network
+- [MQTT](ComputerScience/Network/MQTT.md)
 
 ### Image
 - [[Image] WebP 포맷 정리](ComputerScience/Image/[Image]%20WebP%20포맷%20정리.md)
