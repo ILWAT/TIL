@@ -180,6 +180,32 @@ gif2webp -q 80 input.gif -o output.webp
 
 macOS에서는 `brew install webp`로 설치할 수 있습니다.
 
+### 4. Android Studio에서 변환
+
+Android 프로젝트라면 별도 도구 없이 IDE에서 바로 변환할 수 있습니다.
+
+**① 변환할 이미지에서 우클릭 → `Convert to WebP...`**
+
+<img src="../../Resource/webp_image1.png" width="330" alt="Convert to WebP 메뉴">
+
+**② 인코딩 옵션 설정 후 변환**
+
+<img src="../../Resource/webp_image2.png" width="480" alt="WebP 변환 옵션 다이얼로그">
+
+| 옵션 | 설명 |
+| :--- | :--- |
+| **Lossy encoding** | 손실 압축. `Encoding quality`로 품질 조절 (기본 75%, `cwebp -q`와 동일) |
+| **Lossless encoding** | 무손실 압축 |
+| **Preview/inspect each converted image before saving** | 저장 전에 변환 결과를 원본과 비교해서 확인 |
+| **Skip files where the encoded result is larger than the original** | 변환 후 오히려 용량이 커지면 건너뜀 |
+| **Skip images with transparency/alpha channel** | 투명도 있는 이미지를 변환에서 제외 |
+
+- 폴더 단위로 선택해서 **여러 이미지를 한 번에 변환**할 수도 있습니다.
+- 나인패치(`.9.png`)는 WebP로 변환할 수 없어 항상 건너뜁니다.
+- 변환 후 원본 PNG는 삭제되고 `.webp`로 대체되므로, 커밋 전에 diff를 확인하세요.
+
+> ⚠️ 다이얼로그는 투명도 지원 조건을 **Android 4.3 (API 18)** 로 안내하지만, [공식 문서](https://developer.android.com/studio/write/convert-webp)상 무손실·투명도 WebP는 **Android 4.2.1 (API 17)** 부터 지원됩니다. IDE가 한 단계 보수적으로 안내하는 셈이라, API 17을 지원해야 한다면 실제 기기에서 확인이 필요합니다.
+
 ---
 
 ## 언제 쓰고, 언제 쓰지 말아야 할까
