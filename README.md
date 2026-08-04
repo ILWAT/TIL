@@ -17,6 +17,9 @@ Today I Learned
 - [Harness Engineering 정리](AI/[AI]%20Harness%20Engineering%20정리.md)
 - [Claude 프론트매터 정리](AI/[AI]%20Claude%20프론트매터%20정리.md)
 
+## Flutter
+- [[Flutter] Android Flavor 설정](Flutter/[Flutter]%20Android%20Flavor%20설정.md)
+
 ## Computer Science
 
 ### Network
