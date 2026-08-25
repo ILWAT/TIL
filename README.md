@@ -43,6 +43,9 @@ Today I Learned
 ### Image
 - [[Image] WebP 포맷 정리](ComputerScience/Image/[Image]%20WebP%20포맷%20정리.md)
 
+### Algorithm
+- [[Algorithm] 더글라스-포이커(Douglas-Peucker) 알고리즘](ComputerScience/Algorithm/[Algorithm]%20더글라스-포이커(Douglas-Peucker)%20알고리즘.md)
+
 
 ## Git
 - [특정 라인 커밋하기](Git/특정%20라인%20커밋하기.md)
