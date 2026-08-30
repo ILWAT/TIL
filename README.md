@@ -27,6 +27,7 @@ Today I Learned
 
 ### Xcode
 - [Deployment Target VS minimum Deployment](iOS/Build/[iOS]Deployment%20Target%20VS%20minimum%20Deployment.md)
+- [[Xcode] Asset Symbol (ImageResource / ColorResource) 정리](iOS/[Xcode]%20Asset%20Symbol%20(ImageResource)%20정리.md)
 
 ## AI
 - [Harness Engineering 정리](AI/[AI]%20Harness%20Engineering%20정리.md)
