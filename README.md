@@ -38,6 +38,7 @@ Today I Learned
 ## Flutter
 - [[Flutter] Android Flavor 설정](Flutter/[Flutter]%20Android%20Flavor%20설정.md)
 - [[Flutter] Continuous Delivery (CD) 정리](Flutter/[Flutter]%20Continuous%20Delivery%20(CD)%20정리.md)
+- [[Dart] 타입 캐스팅 필수 정리](Flutter/[Dart]%20타입%20캐스팅%20필수%20정리.md)
 
 ## Computer Science
 
