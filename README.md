@@ -26,6 +26,7 @@ Today I Learned
 - [[Swift] Actor 개념과 예시 정리](iOS/[Swift]%20Actor%20개념과%20예시%20정리.md)
 - [[Swift] for try await 반복문 (AsyncSequence) 정리](iOS/[Swift]%20for%20try%20await%20반복문%20(AsyncSequence)%20정리.md)
 - [[Swift] Hasher 정리](iOS/[Swift]%20Hasher%20정리.md)
+- [[SwiftUI] transition 모디파이어 정리](iOS/[SwiftUI]%20transition%20모디파이어%20정리.md)
 
 ### Xcode
 - [Deployment Target VS minimum Deployment](iOS/Build/[iOS]Deployment%20Target%20VS%20minimum%20Deployment.md)
